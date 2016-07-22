@@ -1,0 +1,24 @@
+{
+  "name": "simple-engine-ui",
+  "description": "The ui for simple-engine.",
+  "main": [
+    "dist/simple-engine-ui.js",
+    "dist/simple-engine-ui.css"
+  ],
+  "authors": [
+    "Anthony Pizzimenti"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "simple",
+    "engine",
+    "ui"
+  ],
+  "homepage": "",
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "angular": "^1.5.7"
+  },
+  "devDependencies": {
+  }
+}

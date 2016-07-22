@@ -1,0 +1,6 @@
+{
+    "dest": "./scripts/gamejson.js",
+    "src": "game.html",
+    "cwd": "./",
+    "toplevelid": "start"
+}

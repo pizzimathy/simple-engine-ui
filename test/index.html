@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>test</title>
+        <!-- include: "type": "css", "files": ["<%= app.styles %>"] -->
+        <link href="../lib/styles/gameWindow.css" rel="stylesheet" type="text/css">
+        <link href="../lib/styles/outerWindow.css" rel="stylesheet" type="text/css">
+        <!-- /include -->
+    </head>
+    <body>
+
+        <!-- bower:js -->
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <!-- endbower -->
+
+        <!-- include: "type": "js", "files": ["<%= app.scripts %>"] -->
+        <script src="../lib/scripts/data/Display.js"></script>
+        <script src="../lib/scripts/tools/adjust.js"></script>
+        <script src="../lib/scripts/tools/reset.js"></script>
+        <script src="../lib/scripts/window/GameWindow.js"></script>
+        <!-- /include -->
+
+        <!-- include: "type": "js", "files": ["<%= app.testScripts %>"] -->
+        <script src="../test/scripts/gamejson.js"></script>
+        <script src="../test/scripts/index.js"></script>
+        <!-- /include -->
+
+        <div id="simple-engine"></div>
+    </body>
+</html>
