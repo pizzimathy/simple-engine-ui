@@ -17,7 +17,6 @@ function GameWindow(json) {
     $(document).ready(function () {
         _this.generateChild();
         _this.addWindow();
-
         _this.control();
     });
 }

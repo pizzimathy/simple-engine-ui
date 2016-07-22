@@ -16,23 +16,24 @@ Display.prototype.generate = function () {
 
     var l = document.createElement("ul"),
         t = document.createElement("div"),
+        text = this.json.text,
         c;
 
     t.className = "text";
-    t.innerText = this.json.text;
+    this.gameWindow.append(t);
+    typewriter(t, text);
 
     l.className = "options activeOpt";
     this.activeOpt = l;
 
-    this.gameWindow.append(t);
-
     if (this.json.children) {
         this.gameWindow.append(l);
+
         for (var key in this.json.children) {
             c = document.createElement("li");
             c.className = "optItem";
-            c.innerHTML = key;
             $(".activeOpt").append(c);
+            typewriter(c, key);
         }
         this.cycle();
     } else {}
@@ -72,7 +73,7 @@ Display.prototype.cycle = function () {
 
         if (k === 13) {
             _this2.activeOpt.className = "options";
-            var d = new Display(_this2.json.children[_this2.current.innerText]);
+            var d = new Display(_this2.json.children[_this2.current.innerHTML]);
             document.removeEventListener("keydown", _this.keydown);
         }
     };

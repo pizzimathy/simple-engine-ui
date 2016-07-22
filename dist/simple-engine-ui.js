@@ -19,23 +19,24 @@ Display.prototype.generate = function () {
 
     var l = document.createElement("ul"),
         t = document.createElement("div"),
+        text = this.json.text,
         c;
 
     t.className = "text";
-    t.innerText = this.json.text;
+    this.gameWindow.append(t);
+    typewriter(t, text);
 
     l.className = "options activeOpt";
     this.activeOpt = l;
 
-    this.gameWindow.append(t);
-
     if (this.json.children) {
         this.gameWindow.append(l);
+
         for (var key in this.json.children) {
             c = document.createElement("li");
             c.className = "optItem";
-            c.innerHTML = key;
             $(".activeOpt").append(c);
+            typewriter(c, key);
         }
         this.cycle();
     } else {}
@@ -75,7 +76,7 @@ Display.prototype.cycle = function () {
 
         if (k === 13) {
             _this2.activeOpt.className = "options";
-            var d = new Display(_this2.json.children[_this2.current.innerText]);
+            var d = new Display(_this2.json.children[_this2.current.innerHTML]);
             document.removeEventListener("keydown", _this.keydown);
         }
     };
@@ -105,6 +106,31 @@ function reset(elements) {
     elements.forEach(function (element) {
         element.className = "";
     });
+}
+
+"use strict";
+
+/**
+ * Created by apizzimenti on 7/22/16.
+ */
+
+function typewriter(element, text) {
+
+    var l = text.length,
+        i = 0,
+        interval;
+
+    element.innerHTML = "";
+
+    interval = window.setInterval(function () {
+        element.innerHTML += text[i];
+
+        if (i < l - 1) {
+            i++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 50);
 }
 
 "use strict";
@@ -145,7 +171,6 @@ function GameWindow(json) {
     $(document).ready(function () {
         _this.generateChild();
         _this.addWindow();
-
         _this.control();
     });
 }
