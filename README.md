@@ -10,10 +10,6 @@ There are two ways to use `simple-engine-ui`. The only requirements are that
 If using `grunt-wiredep`, both the `js` and `css` files are main files, so they will be
 included.
 
-1. use the built-in angular directive
-
-
-
     <html>
         <head>
             <link href="path/to/simple-engine-ui.css" rel="stylesheet" type="text/css">
@@ -29,9 +25,7 @@ included.
     
 You can include the `ng-app` attribute anywhere.
     
-2. create normal `div` and include anywhere in your javascript.
-
-
+or create a normal `div` and include anywhere in your javascript.
 
     // index.js
     
