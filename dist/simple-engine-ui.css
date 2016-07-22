@@ -1,0 +1,37 @@
+/*! simple-engine-ui - v0.0.1 - 2016-07-22
+* https://github.com/apizzimenti/simple-engine-ui#readme
+* Copyright (c) 2016 ; Licensed MIT */
+#gameWindow {
+  margin: auto;
+  overflow: scroll;
+  background-color: #000000;
+  font-family: "Courier", "monospace";
+  color: #FFFFFF; }
+
+.text {
+  text-align: left;
+  width: auto;
+  margin-left: 20px; }
+
+.options {
+  padding: 0; }
+  .options li {
+    display: inline;
+    margin-left: 20px;
+    margin-right: 20px; }
+
+.text, .options {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.activeItem {
+  text-decoration: underline; }
+
+/*# sourceMappingURL=gameWindow.css.map */
+
+#simple-engine {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+/*# sourceMappingURL=outerWindow.css.map */
