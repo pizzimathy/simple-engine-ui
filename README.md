@@ -2,7 +2,7 @@
 This is the ui component of `simple-engine`.
 
 ### installation
-`$ bower install simple-engine` or [download](https://github.com/apizzimenti/simple-engine-ui/archive/master.zip).
+`$ bower install simple-engine-ui` or [download](https://github.com/apizzimenti/simple-engine-ui/archive/master.zip).
 
 ### usage
 There are two ways to use `simple-engine-ui`. The only requirements are that
