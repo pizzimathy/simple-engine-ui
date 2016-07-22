@@ -6,7 +6,7 @@
     "dist/simple-engine-ui.css"
   ],
   "authors": [
-    "Anthony Pizzimenti"
+    "Anthony Pizzimenti <pizzimentianthony@gmail.com>"
   ],
   "license": "MIT",
   "keywords": [
@@ -14,7 +14,7 @@
     "engine",
     "ui"
   ],
-  "homepage": "",
+  "homepage": "https://github.com/apizzimenti/simple-engine-ui",
   "dependencies": {
     "jquery": "^3.1.0",
     "angular": "^1.5.7"
