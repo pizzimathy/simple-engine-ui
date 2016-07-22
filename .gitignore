@@ -90,5 +90,6 @@ jspm_packages
 
 .yo-rc.json
 *.css.map
+*.sass
 
 .idea
