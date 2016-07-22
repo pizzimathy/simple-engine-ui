@@ -13,6 +13,7 @@ included.
 1. use the built-in angular directive
 
 
+
     <html>
         <head>
             <link href="path/to/simple-engine-ui.css" rel="stylesheet" type="text/css">
@@ -29,6 +30,7 @@ included.
 You can include the `ng-app` attribute anywhere.
     
 2. create normal `div` and include anywhere in your javascript.
+
 
 
     // index.js
