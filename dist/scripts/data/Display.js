@@ -21,6 +21,11 @@ Display.prototype.generate = function () {
         c;
 
     t.className = "text";
+
+    $(".text").css({
+        "width": this.gameWindow.width - 40 + "px"
+    });
+
     this.gameWindow.append(t);
     typewriter(t, text, true);
 

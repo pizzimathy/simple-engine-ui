@@ -11,8 +11,9 @@
 
 .text {
   text-align: left;
-  width: 9%;
-  margin-left: 20px; }
+  margin: auto;
+  margin-left: 20px;
+  margin-right: 20px; }
 
 .options {
   padding: 0; }
