@@ -22,7 +22,7 @@ Display.prototype.generate = function () {
 
     t.className = "text";
     this.gameWindow.append(t);
-    typewriter(t, text);
+    typewriter(t, text, true);
 
     l.className = "options activeOpt";
     this.activeOpt = l;
@@ -35,10 +35,10 @@ Display.prototype.generate = function () {
                 c = document.createElement("li");
                 c.className = "optItem";
                 $(".activeOpt").append(c);
-                typewriter(c, key);
+                typewriter(c, key, false);
             }
+            _this2.cycle();
         });
-        this.cycle();
     } else {}
 };
 
