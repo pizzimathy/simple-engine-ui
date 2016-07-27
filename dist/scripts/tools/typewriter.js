@@ -1,10 +1,11 @@
 "use strict";
 
+(function () {})();
 /**
  * Created by apizzimenti on 7/22/16.
  */
 
-function typewriter(element, text) {
+function typewriter(element, text, main) {
 
     var l = text.length,
         i = 0,
@@ -18,6 +19,10 @@ function typewriter(element, text) {
         if (i < l - 1) {
             i++;
         } else {
+            if (main) {
+                var g = new Event("typewriter_oncomplete");
+                document.dispatchEvent(g);
+            }
             clearInterval(interval);
         }
     }, 50);

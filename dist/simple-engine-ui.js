@@ -1,4 +1,4 @@
-/*! simple-engine-ui - v0.0.1 - 2016-07-22
+/*! simple-engine-ui - v0.0.1 - 2016-07-27
 * https://github.com/apizzimenti/simple-engine-ui#readme
 * Copyright (c) 2016 ; Licensed MIT */
 "use strict";
@@ -16,6 +16,7 @@ function Display(json) {
 }
 
 Display.prototype.generate = function () {
+    var _this2 = this;
 
     var l = document.createElement("ul"),
         t = document.createElement("div"),
@@ -32,18 +33,20 @@ Display.prototype.generate = function () {
     if (this.json.children) {
         this.gameWindow.append(l);
 
-        for (var key in this.json.children) {
-            c = document.createElement("li");
-            c.className = "optItem";
-            $(".activeOpt").append(c);
-            typewriter(c, key);
-        }
+        document.addEventListener("typewriter_oncomplete", function () {
+            for (var key in _this2.json.children) {
+                c = document.createElement("li");
+                c.className = "optItem";
+                $(".activeOpt").append(c);
+                typewriter(c, key);
+            }
+        });
         this.cycle();
     } else {}
 };
 
 Display.prototype.cycle = function () {
-    var _this2 = this;
+    var _this3 = this;
 
     var k = 0,
         l = document.getElementsByClassName("activeOpt")[0].childNodes,
@@ -70,13 +73,13 @@ Display.prototype.cycle = function () {
             }
         }
 
-        _this2.current = l[i];
+        _this3.current = l[i];
         reset(l);
-        adjust(_this2.current);
+        adjust(_this3.current);
 
         if (k === 13) {
-            _this2.activeOpt.className = "options";
-            var d = new Display(_this2.json.children[_this2.current.innerHTML]);
+            _this3.activeOpt.className = "options";
+            var d = new Display(_this3.json.children[_this3.current.innerHTML]);
             document.removeEventListener("keydown", _this.keydown);
         }
     };
@@ -110,11 +113,12 @@ function reset(elements) {
 
 "use strict";
 
+(function () {})();
 /**
  * Created by apizzimenti on 7/22/16.
  */
 
-function typewriter(element, text) {
+function typewriter(element, text, main) {
 
     var l = text.length,
         i = 0,
@@ -128,6 +132,10 @@ function typewriter(element, text) {
         if (i < l - 1) {
             i++;
         } else {
+            if (main) {
+                var g = new Event("typewriter_oncomplete");
+                document.dispatchEvent(g);
+            }
             clearInterval(interval);
         }
     }, 50);
